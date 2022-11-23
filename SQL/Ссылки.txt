@@ -1,0 +1,7 @@
+https://tabix.lab.karpov.courses/
+https://clickhouse.lab.karpov.courses
+
+login: student
+pwd: dpo_python_2020
+
+https://clickhouse.com/docs/en/sql-reference/functions/

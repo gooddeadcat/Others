@@ -1,0 +1,73 @@
+-- Простые типы данных - как в numpy.
+-- Составные типы: JSON, array, tuple...
+-- SQL - Structured Query Language
+-- select 1 as a
+-- Только такой порядок:
+-- select *
+-- from default.events
+-- limit 10
+/*select AppPlatform, events, EventDate 
+from default.events
+limit 10*/
+-- Кроме:
+/*select * except (AppPlatform, EventDate) 
+from default.events
+limit 10*/
+/*select events as events_count,
+    events%10 as events_mod_10 -- создали переменные.
+from default.events
+limit 10*/
+-- В select пишутся поля и функции от них.
+/*select *
+from default.events
+where 1 -- условие, которое возвращает true/false
+limit 10*/
+
+/*select *
+from default.events
+where not(
+  EventDate = '2019-09-15' -- условие, которое возвращает true/false
+  and events = 10
+  or AppPlatform = 'iOS')
+limit 10*/
+
+/*SELECT *,
+    events AS events_count,
+    events%10 as events_mod_10,
+    pow(events,2) 
+FROM default.events
+WHERE 
+    not (
+        (EventDate = '2019-09-15' and events = 10)
+        or 
+        (AppPlatform = 'iOS')
+        )
+order by events_count
+LIMIT 10*/
+
+/*select count()
+from default.events
+limit 10*/
+
+/*select count( )
+from(
+    select distinct EventDate 
+    from default.events
+    )
+limit 10*/
+
+/*select count(distinct EventDate) 
+from default.events
+limit 10*/
+
+/*select uniqExact( DeviceID ) , count()
+from default.events
+where EventDate between '2019-04-01' and '2019-04-30'
+limit 10*/
+
+-- Приближенное:
+select uniqCombined64( DeviceID ) , count()
+-- uniq( DeviceID ) , count()
+from default.events
+where EventDate between '2019-04-01' and '2019-04-30'
+limit 10
