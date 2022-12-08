@@ -71,3 +71,11 @@ select uniqCombined64( DeviceID ) , count()
 from default.events
 where EventDate between '2019-04-01' and '2019-04-30'
 limit 10
+
+-- join --
+select l.*, r.*
+from t1 as l
+join t2 as r
+on l.id = r.id and l.id2 = r.id2
+
+Кликхаус джойнит медленно. Так что лучше делать это в конце.
