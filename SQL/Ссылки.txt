@@ -5,3 +5,8 @@ login: student
 pwd: dpo_python_2020
 
 https://clickhouse.com/docs/en/sql-reference/functions/
+
+https://www.sql-ex.ru/?Lang=0
+login - klimentblue
+password - yggdrasil8sql-ex
+nickname - gooddeadcat
