@@ -1,0 +1,69 @@
+select 
+ a.point,
+ a.date,
+ outcome,
+ income
+from
+(
+ select 
+  point,
+  date,
+  sum(inc) as income
+ from income
+ group by 
+  point,
+  date
+) as a
+
+left join
+
+(
+ select 
+  point,
+  date,
+  sum(out) as outcome
+ from outcome
+ group by 
+  point,
+  date
+) as b
+
+on 
+ a.point = b.point and
+ a.date = b.date
+
+union
+
+select 
+ b.point,
+ b.date,
+ outcome,
+ income
+from
+(
+ select 
+  point,
+  date,
+  sum(inc) as income
+ from income
+ group by 
+  point,
+  date
+) as a
+
+right join
+
+(
+ select 
+  point,
+  date,
+  sum(out) as outcome
+ from outcome
+ group by 
+  point,
+  date
+) as b
+
+on 
+ a.point = b.point and
+ a.date = b.date
