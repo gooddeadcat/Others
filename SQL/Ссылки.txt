@@ -11,3 +11,6 @@ login - klimentblue
 password - yggdrasil8sql-ex
 nickname - gooddeadcat
 
+-- Материалы --
+https://stats.stackexchange.com/questions/291594/estimation-of-population-ratio-using-delta-method - дельта для зависимых Y/X
+
